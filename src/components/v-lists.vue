@@ -10,8 +10,8 @@
         >
           <input type="checkbox" v-model="item.input" v-on:change = "addToPanel({list: getFirstList, index: 0})"/>
           <label>Item {{index + 1}}</label>
-          <input type="number" v-on:change = "addToPanel({list: getFirstList, index: 0})" v-model="item.count" min="0"/>
-          <input type="color" v-on:change = "addToPanel({list: getFirstList, index: 0})" v-model="item.color"/>
+          <input class="lists__count" v-on:change = "addToPanel({list: getFirstList, index: 0})" v-model="item.count" min="0"/>
+          <input class="lists__color" type="color" v-on:change = "addToPanel({list: getFirstList, index: 0})" v-model="item.color"/>
         </span>
       </div>
     </div>
@@ -25,8 +25,8 @@
         >
           <input type="checkbox" v-model="item.input" v-on:change = "addToPanel({list: getSecondList, index: 1})"/>
           <label>Item {{index + 1}}</label>
-          <input type="number" v-on:change = "addToPanel({list: getSecondList, index: 1})" v-model="item.count" min="0"/>
-          <input type="color" v-on:change = "addToPanel({list: getSecondList, index: 1})" v-model="item.color"/>
+          <input class="lists__count" v-on:change = "addToPanel({list: getSecondList, index: 1})" v-model="item.count" min="0"/>
+          <input class="lists__color" type="color" v-on:change = "addToPanel({list: getSecondList, index: 1})" v-model="item.color"/>
         </span>
       </div>
     </div>
@@ -40,8 +40,8 @@
         >
           <input type="checkbox" v-model="item.input" v-on:change = "addToPanel({list: getThirdList, index: 2})"/>
           <label>Item {{index + 1}}</label>
-          <input type="number" v-on:change = "addToPanel({list: getThirdList, index: 2})" v-model="item.count" min="0"/>
-          <input type="color" v-on:change = "addToPanel({list: getThirdList, index: 2})" v-model="item.color"/>
+          <input class="lists__count" v-on:change = "addToPanel({list: getThirdList, index: 2})" v-model="item.count" min="0"/>
+          <input class="lists__color" type="color" v-on:change = "addToPanel({list: getThirdList, index: 2})" v-model="item.color"/>
         </span>
       </div>
     </div>
@@ -55,8 +55,8 @@
         >
           <input type="checkbox" v-model="item.input" v-on:change = "addToPanel({list: getFourthList, index: 3})"/>
           <label>Item {{index + 1}}</label>
-          <input type="number" v-on:change = "addToPanel({list: getFourthList, index: 3})" v-model="item.count" min="0"/>
-          <input type="color" v-on:change = "addToPanel({list: getFourthList, index: 3})" v-model="item.color"/>
+          <input class="lists__count" v-on:change = "addToPanel({list: getFourthList, index: 3})" v-model="item.count" min="0"/>
+          <input class="lists__color" type="color" v-on:change = "addToPanel({list: getFourthList, index: 3})" v-model="item.color"/>
         </span>
       </div>
     </div>
@@ -70,8 +70,8 @@
         >
           <input type="checkbox" v-model="item.input" v-on:change = "addToPanel({list: getFifthList, index: 4})"/>
           <label>Item {{index + 1}}</label>
-          <input type="number" v-on:change = "addToPanel({list: getFifthList, index: 4})" v-model="item.count" min="0"/>
-          <input type="color" v-on:change = "addToPanel({list: getFifthList, index: 4})" v-model="item.color"/>
+          <input class="lists__count" v-on:change = "addToPanel({list: getFifthList, index: 4})" v-model="item.count" min="0"/>
+          <input class="lists__color" type="color" v-on:change = "addToPanel({list: getFifthList, index: 4})" v-model="item.color"/>
         </span>
       </div>
     </div>
@@ -134,7 +134,35 @@ export default{
     justify-content: start;
   }
 
+  label{
+    margin-right: 20px;
+  }
+
   .listActive{
     transform: rotate(90deg);
+  }
+
+  .lists__count{
+    max-width: 22px;
+    font-size: 20px;
+    height: 30px;
+    border: none;
+  }
+
+  .lists__color{
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  .lists__color::-webkit-color-swatch{
+    border-radius: 5px;
+    border: none;
   }
 </style>
